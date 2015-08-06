@@ -1,2 +1,3 @@
-# mystories
-My stories private blog
+=======
+# webpack-react-seed
+Minimal project seed with webpack and react
