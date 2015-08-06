@@ -1,0 +1,45 @@
+{
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+
+  "plugins": [
+    "react"
+  ],
+
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+
+  "rules": {
+    "eqeqeq": 2,
+    "func-names": 2,
+    "no-alert": 2,
+    "no-delete-var": 2,
+    "no-eval": 2,
+    "no-shadow": 2,
+    "no-undef": 2,
+    "no-var": 2,
+    "strict": [2, "function"],
+
+    "brace-style": [1, "stroustrup"],
+    "camelcase": [1, {"properties": "always"}],
+    "curly": [1, "all"],
+    "dot-notation": [1, {"allowPattern": "^[a-z]+(_[a-z]+)+$"}],
+    "no-extra-bind": 1,
+    "no-trailing-spaces": 1,
+    "no-undef-init": 1,
+    "no-unused-vars": 1,
+    "object-shorthand": [1, "always"],
+    "operator-assignment": [1, "always"],
+    "operator-linebreak": [1, "after"],
+    "prefer-const": 1,
+    "quotes": [1, "single"],
+    "quote-props": [1, "as-needed"],
+    "semi": [1, "always"],
+    "valid-jsdoc": 1
+  }
+}
