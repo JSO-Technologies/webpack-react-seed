@@ -28,8 +28,7 @@ function configLoaders(config, options) {
         {
             test: /\.jsx$/,
             include: /src/,
-            loaders: options.hotComponents ? ['react-hot-loader', 'babel-loader?stage=0&optional=runtime'] : null,
-            loader:  options.hotComponents ? null : 'babel-loader?stage=1&optional=runtime'
+            loaders: ['babel-loader?stage=0&optional=runtime']
         },
         {
             test: /\.js$/,
