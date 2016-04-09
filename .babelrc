@@ -1,33 +1,12 @@
 {
-  "stage": 0,
-  "env": {
-    // this plugin will be included only in development mode, e.g.
-    // if NODE_ENV (or BABEL_ENV) environment variable is not set
-    // or is equal to "development"
-    "development": {
-      "plugins": [
-        // Include babel-plugin-react-display-name if you’re
-        // using React.createClass() *before* react-transform:
-        // "react-display-name",
-        "react-transform"
-      ],
-      "extra": {
-        // must be defined and be an array
-        "react-transform": [
-            {
-              "target": "react-transform-hmr",
-              // if you use React Native, pass "react-native" instead:
-              "imports": ["react"],
-              // this is important for Webpack HMR:
-              "locals": ["module"]
-            },
-            {
-              // you can have many transforms, not just one
-              "target": "react-transform-catch-errors",
-              "imports": ["react", "redbox-react"]
-            }
-        ]
-      }
+    "plugins": ["transform-object-rest-spread"],
+    "presets": [
+	    "es2015",
+        "react"
+    ],
+    "env": {
+        "development": {
+          "presets": ["react-hmre"]
+        }
     }
-  }
 }

@@ -5,7 +5,7 @@ var src = path.resolve(__dirname, 'src');
 var pathToReact = path.resolve(node_modules, 'react/dist/react.min.js');
 
 var eslintLoaderConf = {
-    test: /(\.js$|\.jsx$)/,
+    test: /(\.js$)/,
     exclude: /node_modules/,
     loader: 'eslint-loader'
 };
@@ -26,14 +26,9 @@ function configLoaders(config, options) {
 
     loaders.push(
         {
-            test: /\.jsx$/,
-            include: /src/,
-            loaders: ['babel-loader?stage=0&optional=runtime']
-        },
-        {
             test: /\.js$/,
-            include: /src/,
-            loader: 'babel-loader?stage=0&optional=runtime'
+            exclude: /node_modules/,
+            loader: 'babel'
         },
         {
             test: /\.scss$/,
@@ -66,10 +61,17 @@ function configPlugins(config, options) {
 
 module.exports = function(options) {
     var config = {
-        entry: path.resolve(__dirname, 'src/js/app.jsx'),
+        entry: [
+            path.resolve(__dirname, 'src/index.js')
+        ],
         output: {
             path: path.resolve(__dirname, 'build'),
             filename: options.minify ? 'bundle.min.js' : 'bundle.js'
+        },
+        devServer: {
+            inline: true,
+            contentBase: path.resolve(__dirname, 'build'),
+            port: 3000
         },
         devtool: options.devtool,
         debug: options.debug,
